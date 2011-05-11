@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>RioSpan - About</title>
+    <title>RioSpan - FAQ</title>
     <style type="text/css" media="all">
       @import url("./css/maven-base.css");
       @import url("./css/maven-theme.css");
@@ -69,56 +69,9 @@
           </ul>
                        <h5>Project Documentation</h5>
                   <ul>
-                                                                                                                                                                                                                                                                                                                                          <li class="expanded">
+                                                                                                                                                                                                                                                                                                                                <li class="collapsed">
                           <a href="project-info.html" title="Project Information">Project Information</a>
-                    <ul>
-                      <li class="none">
-            <strong>About</strong>
-          </li>
-                      <li class="none">
-                          <a href="integration.html" title="Continuous Integration">Continuous Integration</a>
-            </li>
-                      <li class="none">
-                          <a href="dependencies.html" title="Dependencies">Dependencies</a>
-            </li>
-                      <li class="none">
-                          <a href="dependency-convergence.html" title="Dependency Convergence">Dependency Convergence</a>
-            </li>
-                      <li class="none">
-                          <a href="dependency-management.html" title="Dependency Management">Dependency Management</a>
-            </li>
-                      <li class="none">
-                          <a href="distribution-management.html" title="Distribution Management">Distribution Management</a>
-            </li>
-                      <li class="none">
-                          <a href="issue-tracking.html" title="Issue Tracking">Issue Tracking</a>
-            </li>
-                      <li class="none">
-                          <a href="mail-lists.html" title="Mailing Lists">Mailing Lists</a>
-            </li>
-                      <li class="none">
-                          <a href="plugin-management.html" title="Plugin Management">Plugin Management</a>
-            </li>
-                      <li class="none">
-                          <a href="license.html" title="Project License">Project License</a>
-            </li>
-                      <li class="none">
-                          <a href="modules.html" title="Project Modules">Project Modules</a>
-            </li>
-                      <li class="none">
-                          <a href="plugins.html" title="Project Plugins">Project Plugins</a>
-            </li>
-                      <li class="none">
-                          <a href="project-summary.html" title="Project Summary">Project Summary</a>
-            </li>
-                      <li class="none">
-                          <a href="team-list.html" title="Project Team">Project Team</a>
-            </li>
-                      <li class="none">
-                          <a href="source-repository.html" title="Source Repository">Source Repository</a>
-            </li>
-              </ul>
-        </li>
+                  </li>
                                                                                                                                             <li class="collapsed">
                           <a href="project-reports.html" title="Project Reports">Project Reports</a>
                   </li>
@@ -132,7 +85,32 @@
     </div>
     <div id="bodyColumn">
       <div id="contentBox">
-        <div class="section"><h2>About RioSpan<a name="About_RioSpan"></a></h2><a name="About_RioSpan"></a><p>RioSpan is an experiment in deploying Infinispan to Rio.</p></div>
+        <div class="section"><h2><a name="top">FAQ</a><a name="FAQ"></a></h2><p><b>Background</b></p><ol style="list-style-type: decimal"><li><a href="#Infinispan">What is Infinispan?</a></li><li><a href="#rio">What is Rio?</a></li><li><a href="#together">Why bring Infinispan and Rio together?</a></li></ol></div><div class="section"><h2>Background<a name="Background"></a></h2><dl><dt><a name="Infinispan">What is Infinispan?</a></dt><dd>
+                <p>
+                    <a class="externalLink" href="http://infinispan.org">Infinispan</a>
+                    is an open-source Java-based clustered caching technology that provides, via ancillary libraries, a
+                    remotely accessible key-value store, a Hibernate 2nd-level cache, and a Lucene Directory
+                    implementation, among other features.
+               </p>
+            <p align="right"><a href="#top">[top]</a></p><hr /></dd><dt><a name="rio">What is Rio?</a></dt><dd>
+                <p>
+                    <a class="externalLink" href="http://rio-project.org">Rio</a>
+                    is an open-source distributed service framework built on
+                    <a class="externalLink" href="http://jini.org">Jini</a>
+                    . Jini provides a security model, lookup service, and low-level deployment mechanisms, to which Rio
+                    adds rule-based SLAs and service provisioning, simplified build, test, and deployment cycles, and a
+                    dynamic container, known
+                    as a Cybernode.
+               </p>
+            <p align="right"><a href="#top">[top]</a></p><hr /></dd><dt><a name="together">Why bring Infinispan and Rio together?</a></dt><dd>
+                <p>While Infinispan provides an excellent caching option for many application requirements, it is left
+                    to the user to deploy Infinispan to participating machines in a network. As a 100% Java technology,
+                    however, it can easily be deployed to Rio Cybernodes allowing for a more dynamic deployment
+                    scenario. Through instrumentation and monitoring it is possible to change a cluster's topology or
+                    introduce/remove cluster members dynamically. Out of the box Infinispan has the ability to respond
+                    to topology changes however it doesn't itself provide any ability to start or stop cluster members.
+               </p>
+            <p align="right"><a href="#top">[top]</a></p></dd></dl></div>
       </div>
     </div>
     <div class="clear">
