@@ -1,0 +1,30 @@
+-classpath
+'/Users/jramsdale/Documents/workspaces/rio/riospan/target/classes:/Users/jramsdale/Documents/workspaces/rio/riospan/riospan-api/target/classes:/Users/jramsdale/Documents/workspaces/rio/riospan/hotrod/target/classes:/Users/jramsdale/Documents/workspaces/rio/riospan/hotrod/hotrod-api/target/classes:/Users/jramsdale/Documents/workspaces/rio/riospan/riospan-core/target/classes:/Users/jramsdale/Documents/workspaces/rio/riospan/hotrod/hotrod-proxy/target/classes:/Users/jramsdale/Documents/workspaces/rio/riospan/hotrod/hotrod-service/target/classes:/Users/jramsdale/Documents/workspaces/rio/riospan/hotrod/hotrod-client/target/classes:/Users/jramsdale/Documents/workspaces/rio/riospan/hotrod/hotrod-ui/target/classes:/Users/jramsdale/Documents/workspaces/rio/riospan/lucene/target/classes:/Users/jramsdale/Documents/workspaces/rio/riospan/lucene/lucene-api/target/classes:/Users/jramsdale/Documents/workspaces/rio/riospan/lucene/lucene-service/target/classes:/Users/jramsdale/.m2/repository/net/jini/jsk-dl/2.1/jsk-dl-2.1.jar:/Users/jramsdale/.m2/repository/org/codehaus/groovy/groovy-all/1.7.0/groovy-all-1.7.0.jar:/Users/jramsdale/.m2/repository/org/infinispan/infinispan-server-core/4.2.1.FINAL/infinispan-server-core-4.2.1.FINAL.jar:/Users/jramsdale/.m2/repository/cglib/cglib-nodep/2.2/cglib-nodep-2.2.jar:/Users/jramsdale/.m2/repository/org/slf4j/log4j-over-slf4j/1.6.1/log4j-over-slf4j-1.6.1.jar:/Users/jramsdale/.m2/repository/gnu-getopt/getopt/1.0.13/getopt-1.0.13.jar:/Users/jramsdale/.m2/repository/org/infinispan/infinispan-core/4.2.1.FINAL/infinispan-core-4.2.1.FINAL.jar:/Users/jramsdale/Documents/workspaces/rio/riospan/hotrod/hotrod-proxy/target/classes:/Users/jramsdale/.m2/repository/ch/qos/logback/logback-classic/0.9.28/logback-classic-0.9.28.jar:/Users/jramsdale/Documents/workspaces/rio/riospan/riospan-api/target/classes:/Users/jramsdale/Documents/workspaces/rio/riospan/lucene/lucene-api/target/classes:/Users/jramsdale/.m2/repository/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4.jar:/Users/jramsdale/.m2/repository/org/rioproject/rio/4.3-SNAPSHOT/rio-4.3-SNAPSHOT.jar:/Users/jramsdale/.m2/repository/org/slf4j/jcl-over-slf4j/1.6.1/jcl-over-slf4j-1.6.1.jar:/Users/jramsdale/Documents/workspaces/rio/riospan/hotrod/hotrod-api/target/classes:/Users/jramsdale/.m2/repository/org/infinispan/infinispan-server-hotrod/4.2.1.FINAL/infinispan-server-hotrod-4.2.1.FINAL.jar:/Users/jramsdale/.m2/repository/ch/qos/logback/logback-core/0.9.28/logback-core-0.9.28.jar:/Users/jramsdale/.m2/repository/org/jboss/marshalling/river/1.2.3.GA/river-1.2.3.GA.jar:/Users/jramsdale/.m2/repository/org/infinispan/infinispan-client-hotrod/4.2.1.FINAL/infinispan-client-hotrod-4.2.1.FINAL.jar:/Users/jramsdale/.m2/repository/org/apache/lucene/lucene-core/2.9.3/lucene-core-2.9.3.jar:/Users/jramsdale/.m2/repository/org/jboss/marshalling/marshalling-api/1.2.3.GA/marshalling-api-1.2.3.GA.jar:/Users/jramsdale/.m2/repository/jline/jline/0.9.94/jline-0.9.94.jar:/Users/jramsdale/.m2/repository/org/infinispan/infinispan-lucene-directory/4.2.1.FINAL/infinispan-lucene-directory-4.2.1.FINAL.jar:/Users/jramsdale/.m2/repository/i18nlog/i18nlog/1.0.10/i18nlog-1.0.10.jar:/Users/jramsdale/.m2/repository/org/apache/commons/commons-compress/1.0/commons-compress-1.0.jar:/Users/jramsdale/.m2/repository/com/mycila/mycila-event/4.2.ga/mycila-event-4.2.ga.jar:/Users/jramsdale/.m2/repository/org/rhq/helpers/rhq-pluginAnnotations/3.0.1/rhq-pluginAnnotations-3.0.1.jar:/Users/jramsdale/.m2/repository/org/jboss/netty/netty/3.2.3.Final/netty-3.2.3.Final.jar:/Users/jramsdale/.m2/repository/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.jar:/Users/jramsdale/.m2/repository/org/slf4j/jul-to-slf4j/1.6.1/jul-to-slf4j-1.6.1.jar:/Users/jramsdale/Documents/workspaces/rio/riospan/riospan-core/target/classes:/Users/jramsdale/.m2/repository/com/miglayout/miglayout/3.7.4/miglayout-3.7.4-swing.jar:/Users/jramsdale/.m2/repository/org/scala-lang/scala-library/2.8.1/scala-library-2.8.1.jar:/Users/jramsdale/.m2/repository/org/rioproject/boot/4.3-SNAPSHOT/boot-4.3-SNAPSHOT.jar:/Users/jramsdale/.m2/repository/net/jini/lookup/jmx-lookup/2.1/jmx-lookup-2.1.jar:/Users/jramsdale/.m2/repository/org/jgroups/jgroups/2.12.0.CR5/jgroups-2.12.0.CR5.jar:/Users/jramsdale/.m2/repository/net/jini/jsk-lib/2.1/jsk-lib-2.1.jar:/Users/jramsdale/.m2/repository/net/jini/jsk-platform/2.1/jsk-platform-2.1.jar:/Users/jramsdale/.m2/repository/net/jini/start/2.1/start-2.1.jar:/Users/jramsdale/.m2/repository/org/jboss/javaee/jboss-transaction-api/1.0.1.GA/jboss-transaction-api-1.0.1.GA.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/Users/jramsdale/Documents/workspaces/rio/riospan/riospan-api/src/main/java:/Users/jramsdale/Documents/workspaces/rio/riospan/hotrod/hotrod-api/src/main/java:/Users/jramsdale/Documents/workspaces/rio/riospan/riospan-core/src/main/java:/Users/jramsdale/Documents/workspaces/rio/riospan/hotrod/hotrod-proxy/src/main/java:/Users/jramsdale/Documents/workspaces/rio/riospan/hotrod/hotrod-service/src/main/java:/Users/jramsdale/Documents/workspaces/rio/riospan/hotrod/hotrod-client/src/main/java:/Users/jramsdale/Documents/workspaces/rio/riospan/hotrod/hotrod-ui/src/main/java:/Users/jramsdale/Documents/workspaces/rio/riospan/lucene/lucene-api/src/main/java:/Users/jramsdale/Documents/workspaces/rio/riospan/lucene/lucene-service/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2011. All Rights Reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/jramsdale/Documents/workspaces/rio/riospan/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'RioSpan 1.0.0-SNAPSHOT API'
+-link
+'http://www.rio-project.org/apidocs'
+-link
+'http://docs.jboss.org/infinispan/4.2/apidocs'
+-link
+'http://river.apache.org/doc/specs/api'
+-linkoffline
+'http://download.oracle.com/javase/6/docs/api' '/Users/jramsdale/Documents/workspaces/rio/riospan/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'RioSpan 1.0.0-SNAPSHOT API'

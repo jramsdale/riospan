@@ -1,0 +1,5 @@
+org.rioproject.substrates.riospan
+org.rioproject.substrates.riospan.transport
+org.rioproject.substrates.riospan.examples.hotrod
+org.rioproject.substrates.riospan.ui
+org.rioproject.substrates.riospan.lucene
