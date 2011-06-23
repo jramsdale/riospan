@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>RioSpan - RioSpan in 5 Minutes</title>
+    <style type="text/css" media="all">
+      @import url("./css/maven-base.css");
+      @import url("./css/maven-theme.css");
+      @import url("./css/site.css");
+    </style>
+    <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+                                                    
+<script type="text/javascript">var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'UA-3699687-3']);
+                    _gaq.push(['_trackPageview']);
+                    (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();</script>
+                    </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="http://jramsdale.github.com/riospan" id="bannerLeft">
+    
+                                            <img src="images/bridge.jpg" alt="" />
+    
+            </a>
+                        <a href="http://jramsdale.github.com/riospan" id="bannerRight">
+    
+            RioSpan
+    
+            </a>
+            <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+  
+  
+    
+            <div class="xleft">
+        Last Published: 2011-06-23
+                      </div>
+            <div class="xright">            <a href="">RioSpan on GitHub</a>
+            |
+                <a href="http://www.rio-project.org/" class="externalLink">Rio Project</a>
+            |
+                <a href="http://www.jboss.org/infinispan/" class="externalLink">Infinispan</a>
+            
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+  
+  
+    
+                   <h5>Main</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="./index.html">Introduction</a>
+          </li>
+              
+    <li class="none">
+                    <a href="./faq.html">FAQ</a>
+          </li>
+          </ul>
+              <h5>Using RioSpan</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="./five-mins.html">RioSpan in 5 Minutes</a>
+          </li>
+              
+    <li class="none">
+                    <a href="./examples.html">Examples</a>
+          </li>
+              
+    <li class="none">
+                    <a href="./getting-started.html">Getting Started</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="project-info.html">Project Information</a>
+                </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="./images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+  
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section"><h2><a name="RioSpan_in_5_Minutes"></a>RioSpan in 5 Minutes</h2>
+<div><p>
+                    A demonstration of RioSpan takes only a few minutes. This page describes a simple example without
+                    delving into conceptual detail too much. For more detail, see
+                    <a href="getting_started.html">Getting Started</a>
+                    .
+                </p>
+<p>Steps required to run the demo:</p>
+<ol type="1"><li><a href="#Install_Rio">Install Rio</a></li>
+<li><a href="#Start_Rio">Start Rio</a></li>
+<li><a href="#Build_RioSpan">Build RioSpan</a></li>
+<li><a href="#Deploy_RioSpan">Deploy RioSpan</a></li>
+<li><a href="#Run_RioSpan_Client">Run a RioSpan Client</a></li>
+</ol>
+</div><h3><a name="Install_Rio">Install Rio</a></h3><div><p><a href="http://www.rio-project.org" class="externalLink">Rio</a>
+                    is required for RioSpan as it is the runtime service container to which RioSpan is deployed. The
+                    first step to deploying RioSpan, then, is installing Rio.
+                </p>
+<p>RioSpan is being developed against the latest Rio release. As such, it's necessary to build Rio from
+                    source to test RioSpan.
+                </p>
+<ol type="1"><li>
+                        Check out Rio using git:
+                        <div class="source"><pre>git clone git://github.com/dreedyman/Rio.git</pre></div></li>
+<li>
+                        Switch to the Rio root directory:
+                        <div class="source"><pre>cd Rio</pre></div></li>
+<li>
+                        Build Rio and install to your local Maven repository:
+                        <div class="source"><pre>mvn clean install</pre></div><br />
+<div id="infobox"><img src="images/information.gif" alt="Information Box Icon" />
+                            Building Rio may require Maven 3 as Rio internally uses Maven 3 features for code
+                            provisioning.
+                        </div><br />
+</li>
+<li>
+                        Set your
+                        <code>RIO_HOME</code>
+                        environment variable to the
+                        <code>distribution/target/rio-4.3-SNAPSHOT</code>
+                        directory under the location of your clone of the Rio Git repository.
+                    </li>
+</ol>
+</div><h3><a name="Start_Rio">Start Rio</a></h3><div><p>Rio provides a service container, called a Cybernode, to which services are deployed. It also
+                    provides a Provision Monitor that ensures SLAs are met and that deploys services in response to
+                    deployment requests. Typical Rio use would involve starting at least one Provision Monitor and as
+                    many Cybernodes as are required to host services.
+                </p>
+<ol type="1"><li>
+                        Run the
+                        <code>startall</code>
+                        script in the
+                        <code>RIO_HOME/bin</code>
+                        directory (
+                        <code>startall.cmd</code>
+                        on Windows) to start a Jini lookup service, Cybernode, and Provision Monitor.
+                    </li>
+<li>
+                        (Optional)
+                        Run
+                        <code>RIO_HOME/bin/cybernode</code>
+                        (
+                        <code>cybernode.cmd</code>
+                        on Windows) on any additional machines to start more service containers
+                    </li>
+<li>
+                        Run the Rio UI in
+                        <code>RIO_HOME/bin</code>
+                        :
+                        <code>rio-ui</code>
+                        or
+                        <code>rio-ui.cmd</code>
+                        on Windows
+                    </li>
+</ol>
+</div><h3><a name="Build_RioSpan">Build RioSpan</a></h3><div><p>
+                    For now, the easiest way to obtain RioSpan is to build it yourself:
+                </p>
+<ol type="1"><li>
+                        Check out RioSpan using git:
+                        <div class="source"><pre>git clone git://github.com/jramsdale/riospan.git</pre></div></li>
+<li>
+                        Build and install RioSpan to your local Maven repository:
+                        <div class="source"><pre>mvn clean install</pre></div></li>
+</ol>
+</div><h3><a name="Deploy_RioSpan">Deploy RioSpan</a></h3><div><p>
+                    There are a number of ways to deploy services to Rio, but the easiest is probably to use the Rio UI
+                    launched in the previous step:
+                </p>
+<ol type="1"><li>
+                        In the UI, click the button on the button bar marked
+                        <code>Deploy...</code></li>
+<li>
+                        In the field labeled
+                        <code>Enter artifact (groupId:artifactId:version) to deploy</code>
+                        enter:
+                        <code>org.rioproject.substrates.riospan:hotrod:1.0.0-SNAPSHOT</code>
+                        and click the
+                        <code>Deploy</code>
+                        button.
+                    </li>
+<li>Wait a minute or two as RioSpan is deployed. You'll see the RioSpan application and Hot Rod
+                        Service display as red, then yellow, then green as it cycles through the lifecycle stages. When
+                        the Hot Rod Server is green RioSpan is ready to serve a client.
+                    </li>
+</ol>
+<br />
+<div id="infobox"><img src="images/information.gif" alt="Information Box Icon" />
+                    Rio uses Maven to provision artifacts and their dependencies
+                </div><br />
+</div><h3><a name="Run_RioSpan_Client">Run RioSpan Client</a></h3><div><p>
+                    Java can be a bit unwieldy on the commandline when using long classpaths. For that reason the RioSpan
+                    HotRod client demo can be run via Maven.
+                </p>
+<p>First, navigate to the directory containing the HotRod Client project:</p>
+<div class="source"><pre>cd hotrod/hotrod-client</pre></div><p>Then run the client:</p>
+<div class="source"><pre>mvn exec:java -Pdemo</pre></div><p>The first time the client is run the it puts the value &quot;world&quot; to the key &quot;hello&quot; in the default
+                    cache in Infinispan. On subsequent runs it displays the value discovered for the key &quot;hello&quot;.
+                </p>
+<p>First run output (among the Maven output):</p>
+<div class="source"><pre>
+                        Jun 22, 2011 11:52:08 PM org.infinispan.client.hotrod.impl.operations.HotRodOperation readNewTopologyAndHash
+                        INFO: ISPN04006: New topology: {GLaDOS.local/192.168.123.4:11222=8073}
+                        Jun 22, 2011 11:52:08 PM org.infinispan.client.hotrod.impl.transport.tcp.TcpTransportFactory updateServers
+                        INFO: ISPN04014: New server added(GLaDOS.local/192.168.123.4:11222), adding to the pool.
+                        world
+                    </pre></div><p>Second run output:</p>
+<div class="source"><pre>
+                        Jun 22, 2011 11:53:48 PM org.infinispan.client.hotrod.impl.operations.HotRodOperation readNewTopologyAndHash
+                        INFO: ISPN04006: New topology: {GLaDOS.local/192.168.123.4:11222=8073}
+                        Jun 22, 2011 11:53:48 PM org.infinispan.client.hotrod.impl.transport.tcp.TcpTransportFactory updateServers
+                        INFO: ISPN04014: New server added(GLaDOS.local/192.168.123.4:11222), adding to the pool.
+                        Found existing value: world
+                    </pre></div></div></div>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2011
+    
+          Jeff Ramsdale
+          
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>
