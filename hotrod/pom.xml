@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.rioproject.substrates.riospan</groupId>
+        <artifactId>riospan</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    
+    <groupId>org.rioproject.substrates.riospan</groupId>
+    <artifactId>hotrod</artifactId>
+    <packaging>pom</packaging>
+    <name>RioSpan HotRod</name>
+    
+    <modules>
+        <module>hotrod-api</module>
+        <module>hotrod-proxy</module>
+        <module>hotrod-service</module>
+        <module>hotrod-client</module>
+        <module>hotrod-ui</module>
+    </modules>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-rio-plugin</artifactId>
+                <version>${rio.maven.plugin.version}</version>
+                <extensions>true</extensions>
+
+                <executions>
+                    <execution>
+                        <id>build-oar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>oar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <opstring>${basedir}/src/main/opstring/hotrod.groovy</opstring>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+    
+    <dependencies>
+        <dependency>
+            <groupId>org.rioproject</groupId>
+            <artifactId>rio</artifactId>
+        </dependency>
+    </dependencies>
+    
+</project>

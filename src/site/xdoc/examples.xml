@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+    <properties>
+        <title>Examples</title>
+    </properties>
+
+    <body>
+
+        <section name="Introduction">
+            <div>
+                <p>
+                    RioSpan is, at its essence, a thin wrapper around Infinispan allowing it to be deployed to
+                    Rio.
+                    Infinispan is typically configured via an XML configuration file that describes a cluster and the
+                    caches it hosts. The RioSpan examples load their respective Infinispan configurations from a file
+                    called
+                    <code>infinispan-config.xml</code>
+                    in the classpath of their service modules. Experienced Maven users would know to look for
+                    classpath
+                    resources in the
+                    <code>src/main/resources</code>
+                    directory within the example modules with a
+                    <code>-service</code>
+                    suffix.
+                </p>
+                <p>
+                    Rio uses features of Maven 3
+                </p>
+            </div>
+        </section>
+
+        <section name="HotRod">
+            <div>
+                <p>
+                    Infinispan offers remote access to cache content via a number of mechanisms including WebSockets,
+                    a
+                    REST server, and a custom binary protocal called
+                    <a href="http://community.jboss.org/wiki/JavaHotRodClient">HotRod</a>
+                    . The HotRod example provided with RioSpan shows how Rio can be used to deploy Infinispan and start
+                    an Infinispan HotRod server. As with all RioSpan examples, Infinispan is started using a provided
+                    configuration file. In this example the default cache is started in distributed mode. This means the
+                    cache is partitioned across all cluster members using a consistent hashing algorithm.
+                </p>
+                <p>
+                    This example provides a Jini smart proxy that implements a factory method for creating a
+                    HotRod smart
+                    proxy. Unlike in a non-RioSpan Infinispan installation, this allows the user to create a HotRod
+                    client without knowing the IP address/hostname and port of a cluster member. Rather, Jini's service
+                    discovery mechanism is used to discover a RioSpan HotRodProxy containing a
+                    createHotRodCacheContainer() method. Once a service proxy is obtained, calling this method creates a
+                    HotRod client aware of the cluster topology and able to react if it changes.
+                </p>
+            </div>
+        </section>
+
+    </body>
+
+</document>

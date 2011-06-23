@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.rioproject.substrates.riospan</groupId>
+    <artifactId>riospan</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>RioSpan</name>
+    <url>https://github.com/jramsdale/riospan</url>
+    <description>RioSpan is an experiment in deploying Infinispan to Rio.</description>
+    <inceptionYear>2011</inceptionYear>
+    <organization>
+        <name>Jeff Ramsdale</name>
+        <url>https://github.com/jramsdale/</url>
+    </organization>
+
+    <modules>
+        <module>hotrod</module>
+        <module>riospan-core</module>
+        <module>riospan-api</module>
+    </modules>
+
+    <licenses>
+        <license>
+            <name>ISC/BSD License</name>
+            <comments>The text of the license may be found at
+                http://www.opensource.org/licenses/isc-license.txt</comments>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/jramsdale/riospan</url>
+        <connection>scm:git:git://github.com/jramsdale/riospan.git</connection>
+        <developerConnection>scm:git:git@github.com:jramsdale/riospan.git</developerConnection>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/jramsdale/riospan/issues</url>
+    </issueManagement>
+
+    <distributionManagement>
+        <site>
+            <id>github</id>
+            <url>gitsite:git@github.com/jramsdale/riospan</url>
+        </site>
+        <repository>
+            <id>github-maven-releases</id>
+            <name>S3 Release Repository</name>
+            <url>s3://jramsdale.github.com/maven/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>github-maven-snapshots</id>
+            <name>S3 Snapshot Repository</name>
+            <url>s3://jramsdale.github.com/maven/snapshots</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <developers>
+        <developer>
+            <name>Jeff Ramsdale</name>
+            <id>jramsdale</id>
+            <url>https://github.com/jramsdale</url>
+        </developer>
+    </developers>
+
+    <build>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.scm</groupId>
+                <artifactId>maven-scm-provider-gitexe</artifactId>
+                <version>1.5</version>
+            </extension>
+            <extension>
+                <groupId>org.apache.maven.scm</groupId>
+                <artifactId>maven-scm-manager-plexus</artifactId>
+                <version>1.5</version>
+            </extension>
+            <extension>
+                <groupId>org.kathrynhuxtable.maven.wagon</groupId>
+                <artifactId>wagon-gitsite</artifactId>
+                <version>0.3.1</version>
+            </extension>
+            <extension>
+                <groupId>org.springframework.build.aws</groupId>
+                <artifactId>org.springframework.build.aws.maven</artifactId>
+                <version>3.0.0.RELEASE</version>
+            </extension>
+        </extensions>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <optimize>true</optimize>
+                    <encoding>UTF-8</encoding>
+                    <meminitial>128m</meminitial>
+                    <maxmem>1024m</maxmem>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>rio</id>
+            <url>http://www.rio-project.org/maven2</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <repositories>
+        <repository>
+            <id>rio</id>
+            <url>http://www.rio-project.org/maven2</url>
+        </repository>
+        <repository>
+            <id>jboss-public-repository-group</id>
+            <name>JBoss Public Maven Repository Group</name>
+            <url>http://repository.jboss.org/nexus/content/groups/public</url>
+            <releases />
+        </repository>
+        <repository>
+            <id>github-maven-releases</id>
+            <name>S3 Release Repository</name>
+            <url>http://jramsdale.github.com.s3.amazonaws.com/maven/releases</url>
+            <releases />
+        </repository>
+        <repository>
+            <id>github-maven-snapshots</id>
+            <name>S3 Snapshot Repository</name>
+            <url>http://jramsdale.github.com.s3.amazonaws.com/maven/snapshots</url>
+            <snapshots />
+        </repository>
+    </repositories>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- RioSpan Artifacts -->
+            <dependency>
+                <groupId>org.rioproject.substrates.riospan</groupId>
+                <artifactId>riospan-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.rioproject.substrates.riospan</groupId>
+                <artifactId>riospan-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Rio Artifacts -->
+            <dependency>
+                <groupId>org.rioproject</groupId>
+                <artifactId>rio</artifactId>
+                <version>${rio.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.rioproject</groupId>
+                <artifactId>rio-test</artifactId>
+                <version>${rio.version}</version>
+                <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>commons-logging</artifactId>
+                        <groupId>commons-logging</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- Infinispan Artifacts -->
+            <dependency>
+                <groupId>org.infinispan</groupId>
+                <artifactId>infinispan-core</artifactId>
+                <version>${infinispan.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- Logging Artifacts -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>log4j-over-slf4j</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jul-to-slf4j</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>0.9.29</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.8.2</version>
+                <scope>test</scope>
+            </dependency>
+
+        </dependencies>
+
+    </dependencyManagement>
+
+    <profiles>
+        <profile>
+            <id>maven-3</id>
+            <activation>
+                <file>
+                    <!-- This employs that the basedir expression is only recognized by Maven 3.x (see MNG-2363) -->
+                    <exists>${basedir}</exists>
+                </file>
+            </activation>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-site-plugin</artifactId>
+                            <version>3.0-beta-3</version>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-site-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-descriptor</id>
+                                <goals>
+                                    <goal>attach-descriptor</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <reportPlugins>
+                                <plugin>
+                                    <groupId>org.apache.maven.plugins</groupId>
+                                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                                    <version>2.3.1</version>
+                                </plugin>
+                                <plugin>
+                                    <groupId>org.apache.maven.plugins</groupId>
+                                    <artifactId>maven-javadoc-plugin</artifactId>
+                                    <version>2.8</version>
+                                    <configuration>
+                                        <links>
+                                            <link>http://www.rio-project.org/apidocs/</link>
+                                            <link>http://docs.jboss.org/infinispan/4.2/apidocs/</link>
+                                            <link>http://river.apache.org/doc/specs/api/</link>
+                                        </links>
+                                    </configuration>
+                                </plugin>
+                                <plugin>
+                                    <groupId>org.apache.maven.plugins</groupId>
+                                    <artifactId>maven-jxr-plugin</artifactId>
+                                    <version>2.2</version>
+                                    <configuration>
+                                        <aggregate>true</aggregate>
+                                        <linkJavadoc>true</linkJavadoc>
+                                    </configuration>
+                                </plugin>
+                                <plugin>
+                                    <groupId>org.apache.maven.plugins</groupId>
+                                    <artifactId>maven-surefire-report-plugin</artifactId>
+                                    <version>2.8.1</version>
+                                </plugin>
+                                <plugin>
+                                    <groupId>org.apache.maven.plugins</groupId>
+                                    <artifactId>maven-pmd-plugin</artifactId>
+                                    <version>2.5</version>
+                                    <configuration>
+                                        <linkXref>true</linkXref>
+                                        <sourceEncoding>UTF-8</sourceEncoding>
+                                        <targetJdk>1.6</targetJdk>
+                                    </configuration>
+                                </plugin>
+                                <plugin>
+                                    <groupId>org.codehaus.mojo</groupId>
+                                    <artifactId>findbugs-maven-plugin</artifactId>
+                                    <version>2.3.2</version>
+                                </plugin>
+                            </reportPlugins>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <infinispan.version>5.0.0.CR5</infinispan.version>
+        <rio.version>4.3-SNAPSHOT</rio.version>
+        <rio.maven.plugin.version>4.1</rio.maven.plugin.version>
+        <slf4j.version>1.6.1</slf4j.version>
+    </properties>
+
+</project>

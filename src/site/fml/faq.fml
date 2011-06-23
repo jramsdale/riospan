@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faqs xmlns="http://maven.apache.org/FML/1.0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/FML/1.0.1 http://maven.apache.org/xsd/fml-1.0.1.xsd">
+
+    <part id="background">
+        <title>Background</title>
+        <faq id="Infinispan">
+            <question>What is Infinispan?</question>
+            <answer>
+                <p>
+                    <a href="http://infinispan.org">Infinispan</a>
+                    is an open-source Java-based clustered caching technology that provides, via ancillary libraries, a
+                    remotely accessible key-value store, a Hibernate 2nd-level cache, and a Lucene Directory
+                    implementation, among other features.
+                </p>
+            </answer>
+        </faq>
+        <faq id="rio">
+            <question>What is Rio?</question>
+            <answer>
+                <p>
+                    <a href="http://rio-project.org">Rio</a>
+                    is an open-source distributed service framework built on
+                    <a href="http://jini.org">Jini</a>
+                    . Jini provides a security model, lookup service, and low-level deployment mechanisms, to which Rio
+                    adds rule-based SLAs and service provisioning, simplified build, test, and deployment cycles, and a
+                    dynamic container, known
+                    as a Cybernode.
+                </p>
+            </answer>
+        </faq>
+        <faq id="together">
+            <question>Why bring Infinispan and Rio together?</question>
+            <answer>
+                <p>While Infinispan provides an excellent caching option for many application requirements, it is left
+                    to the user to deploy Infinispan to participating machines in a network. As a 100% Java technology,
+                    however, it can easily be deployed to Rio Cybernodes allowing for a more dynamic deployment
+                    scenario. Through instrumentation and monitoring it is possible to change a cluster's topology or
+                    introduce/remove cluster members dynamically. Out of the box Infinispan has the ability to respond
+                    to topology changes however it doesn't itself provide any ability to start or stop cluster members.
+                </p>
+            </answer>
+        </faq>
+    </part>
+
+</faqs>

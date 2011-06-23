@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+
+    <properties>
+        <title>RioSpan in 5 Minutes</title>
+    </properties>
+
+    <body>
+
+        <section name="RioSpan in 5 Minutes">
+            <div>
+                <p>
+                    A demonstration of RioSpan takes only a few minutes. This page describes a simple example without
+                    delving into conceptual detail too much. For more detail, see
+                    <a href="getting_started.html">Getting Started</a>
+                    .
+                </p>
+                <p>Steps required to run the demo:</p>
+                <ol>
+                    <li>
+                        <a href="#Install_Rio">Install Rio</a>
+                    </li>
+                    <li>
+                        <a href="#Start_Rio">Start Rio</a>
+                    </li>
+                    <li>
+                        <a href="#Build_RioSpan">Build RioSpan</a>
+                    </li>
+                    <li>
+                        <a href="#Deploy_RioSpan">Deploy RioSpan</a>
+                    </li>
+                    <li>
+                        <a href="#Run_RioSpan_Client">Run a RioSpan Client</a>
+                    </li>
+                </ol>
+            </div>
+            <h3>
+                <a name="Install_Rio">Install Rio</a>
+            </h3>
+            <div>
+                <p>
+                    <a href="http://www.rio-project.org">Rio</a>
+                    is required for RioSpan as it is the runtime service container to which RioSpan is deployed. The
+                    first step to deploying RioSpan, then, is installing Rio.
+                </p>
+                <p>RioSpan is being developed against the latest Rio release. As such, it's necessary to build Rio from
+                    source to test RioSpan.
+                </p>
+                <ol>
+                    <li>
+                        Check out Rio using git:
+                        <div class="source">
+                            <pre>git clone git://github.com/dreedyman/Rio.git</pre>
+                        </div>
+                    </li>
+                    <li>
+                        Switch to the Rio root directory:
+                        <div class="source">
+                            <pre>cd Rio</pre>
+                        </div>
+                    </li>
+                    <li>
+                        Build Rio and install to your local Maven repository:
+                        <div class="source">
+                            <pre>mvn clean install</pre>
+                        </div>
+                        <br />
+                        <div id="infobox">
+                            <img alt="Information Box Icon" src="images/information.gif" />
+                            Building Rio may require Maven 3 as Rio internally uses Maven 3 features for code
+                            provisioning.
+                        </div>
+                        <br />
+                    </li>
+                    <li>
+                        Set your
+                        <code>RIO_HOME</code>
+                        environment variable to the
+                        <code>distribution/target/rio-4.3-SNAPSHOT</code>
+                        directory under the location of your clone of the Rio Git repository.
+                    </li>
+                </ol>
+            </div>
+
+            <h3>
+                <a name="Start_Rio">Start Rio</a>
+            </h3>
+            <div>
+                <p>Rio provides a service container, called a Cybernode, to which services are deployed. It also
+                    provides a Provision Monitor that ensures SLAs are met and that deploys services in response to
+                    deployment requests. Typical Rio use would involve starting at least one Provision Monitor and as
+                    many Cybernodes as are required to host services.
+                </p>
+                <ol>
+                    <li>
+                        Run the
+                        <code>startall</code>
+                        script in the
+                        <code>RIO_HOME/bin</code>
+                        directory (
+                        <code>startall.cmd</code>
+                        on Windows) to start a Jini lookup service, Cybernode, and Provision Monitor.
+                    </li>
+                    <li>
+                        (Optional)
+                        Run
+                        <code>RIO_HOME/bin/cybernode</code>
+                        (
+                        <code>cybernode.cmd</code>
+                        on Windows) on any additional machines to start more service containers
+                    </li>
+                    <li>
+                        Run the Rio UI in
+                        <code>RIO_HOME/bin</code>
+                        :
+                        <code>rio-ui</code>
+                        or
+                        <code>rio-ui.cmd</code>
+                        on Windows
+                    </li>
+                </ol>
+            </div>
+
+            <h3>
+                <a name="Build_RioSpan">Build RioSpan</a>
+            </h3>
+            <div>
+                <p>
+                    For now, the easiest way to obtain RioSpan is to build it yourself:
+                </p>
+                <ol>
+                    <li>
+                        Check out RioSpan using git:
+                        <div class="source">
+                            <pre>git clone git://github.com/jramsdale/riospan.git</pre>
+                        </div>
+                    </li>
+                    <li>
+                        Build and install RioSpan to your local Maven repository:
+                        <div class="source">
+                            <pre>mvn clean install</pre>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <h3>
+                <a name="Deploy_RioSpan">Deploy RioSpan</a>
+            </h3>
+            <div>
+                <p>
+                    There are a number of ways to deploy services to Rio, but the easiest is probably to use the Rio UI
+                    launched in the previous step:
+                </p>
+                <ol>
+                    <li>
+                        In the UI, click the button on the button bar marked
+                        <code>Deploy...</code>
+                    </li>
+                    <li>
+                        In the field labeled
+                        <code>Enter artifact (groupId:artifactId:version) to deploy</code>
+                        enter:
+                        <code>org.rioproject.substrates.riospan:hotrod:1.0.0-SNAPSHOT</code>
+                        and click the
+                        <code>Deploy</code>
+                        button.
+                    </li>
+                    <li>Wait a minute or two as RioSpan is deployed. You'll see the RioSpan application and Hot Rod
+                        Service display as red, then yellow, then green as it cycles through the lifecycle stages. When
+                        the Hot Rod Server is green RioSpan is ready to serve a client.
+                    </li>
+                </ol>
+                <br />
+                <div id="infobox">
+                    <img alt="Information Box Icon" src="images/information.gif" />
+                    Rio uses Maven to provision artifacts and their dependencies
+                </div>
+                <br />
+            </div>
+
+            <h3>
+                <a name="Run_RioSpan_Client">Run RioSpan Client</a>
+            </h3>
+            <div>
+                <p>
+                    Java can be a bit unwieldy on the commandline when using long classpaths. For that reason the RioSpan
+                    HotRod client demo can be run via Maven.
+                </p>
+                <p>First, navigate to the directory containing the HotRod Client project:</p>
+                <div class="source">
+                    <pre>cd hotrod/hotrod-client</pre>
+                </div>
+                <p>Then run the client:</p>
+                <div class="source">
+                    <pre>mvn exec:java -Pdemo</pre>
+                </div>
+                <p>The first time the client is run the it puts the value "world" to the key "hello" in the default
+                    cache in Infinispan. On subsequent runs it displays the value discovered for the key "hello".
+                </p>
+                <p>First run output (among the Maven output):</p>
+                <div class="source">
+                    <pre>
+                        Jun 22, 2011 11:52:08 PM org.infinispan.client.hotrod.impl.operations.HotRodOperation readNewTopologyAndHash
+                        INFO: ISPN04006: New topology: {GLaDOS.local/192.168.123.4:11222=8073}
+                        Jun 22, 2011 11:52:08 PM org.infinispan.client.hotrod.impl.transport.tcp.TcpTransportFactory updateServers
+                        INFO: ISPN04014: New server added(GLaDOS.local/192.168.123.4:11222), adding to the pool.
+                        world
+                    </pre>
+                </div>
+                <p>Second run output:</p>
+                <div class="source">
+                    <pre>
+                        Jun 22, 2011 11:53:48 PM org.infinispan.client.hotrod.impl.operations.HotRodOperation readNewTopologyAndHash
+                        INFO: ISPN04006: New topology: {GLaDOS.local/192.168.123.4:11222=8073}
+                        Jun 22, 2011 11:53:48 PM org.infinispan.client.hotrod.impl.transport.tcp.TcpTransportFactory updateServers
+                        INFO: ISPN04014: New server added(GLaDOS.local/192.168.123.4:11222), adding to the pool.
+                        Found existing value: world
+                    </pre>
+                </div>
+            </div>
+        </section>
+    </body>
+</document>

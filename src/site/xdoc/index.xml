@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+    <properties>
+        <title>Welcome to RioSpan</title>
+        <author>Jeff Ramsdale</author>
+    </properties>
+    <body>
+        <section name="Introduction">
+            <div>
+                <div id="emptyrightbox">
+                    <!-- <p> <a href="http://www.apache.org/licenses/LICENSE-2.0.html"> <img src="images/license_asl.png" 
+                        height="50px" /> </a> </p> -->
+                </div>
+            </div>
+
+            <div>
+                <p>
+                    RioSpan is an experiment in deploying
+                    <a href="http://infinispan.org">Infinispan</a>
+                    to
+                    <a href="http://rio-project.org">Rio</a>
+                    . The result is a highly configurable dynamically scalable data grid.
+                </p>
+            </div>
+
+            <div class="section">
+                <h3>
+                    <a name="Infinispan">Infinispan</a>
+                </h3>
+                <p>Infinispan is a flexible open-source distributed cache technology from JBoss. It can be embedded in
+                    Java applications for use as an embedded cache with the ability to expire and persist
+                    content, among
+                    other options.
+                </p>
+                <p>Of particular interest to RioSpan is Infinispan's ability to treat a cluster of member JVMs as shared
+                    heap. Content stored in the heap can be distributed across the cluster, which can be rebalanced when
+                    members are added or removed.
+                </p>
+            </div>
+
+            <div class="section">
+                <h3>
+                    <a name="Rio">Rio</a>
+                </h3>
+                <p>
+                    Rio is an open-source Java-based framework for provisioning and monitoring distributed applications.
+                    It is built on the mature and well known Jini Technology, now maintained as
+                    <a href="http://river.apache.org">Apache River</a>
+                    . Through clever use of
+                    <a href="http://maven.apache.org">Maven</a>
+                    Rio makes it easy to create and deploy distributed applications--much easier than has historically
+                    been the case with Jini services.
+                </p>
+            </div>
+
+            <div class="section">
+                <h3>
+                    <a name="RioSpan">RioSpan</a>
+                </h3>
+                <p>Infinispan doesn't provide any deployment capability of its own. Distribution of code and maintenance
+                    of cluster members is left to the user. Rio provides a dynamic service distribution mechanism but
+                    doesn't offer a data grid. The two seem a natural fit.
+                </p>
+                <p>RioSpan aims to provide a mechanism for deploying dynamic Infinispan clusters. Provisioning and
+                    management of Infinispan cluster members then becomes Rio's concern instead of the user's.
+                </p>
+            </div>
+
+        </section>
+
+    </body>
+
+</document>
