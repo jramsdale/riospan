@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>RioSpan - Project Build Plugins</title>
+    <title>RioSpan - 
+        Examples - HotRod</title>
     <style type="text/css" media="all">
       @import url("./css/maven-base.css");
       @import url("./css/maven-theme.css");
@@ -85,56 +86,9 @@
           </ul>
                        <h5>Project Documentation</h5>
                   <ul>
-                                                                                                                                                                                                                                                                                                                                          <li class="expanded">
+                                                                                                                                                                                                                                                                                                                                <li class="collapsed">
                           <a href="project-info.html" title="Project Information">Project Information</a>
-                    <ul>
-                      <li class="none">
-                          <a href="index.html" title="About">About</a>
-            </li>
-                      <li class="none">
-                          <a href="integration.html" title="Continuous Integration">Continuous Integration</a>
-            </li>
-                      <li class="none">
-                          <a href="dependencies.html" title="Dependencies">Dependencies</a>
-            </li>
-                      <li class="none">
-                          <a href="dependency-convergence.html" title="Dependency Convergence">Dependency Convergence</a>
-            </li>
-                      <li class="none">
-                          <a href="dependency-management.html" title="Dependency Management">Dependency Management</a>
-            </li>
-                      <li class="none">
-                          <a href="distribution-management.html" title="Distribution Management">Distribution Management</a>
-            </li>
-                      <li class="none">
-                          <a href="issue-tracking.html" title="Issue Tracking">Issue Tracking</a>
-            </li>
-                      <li class="none">
-                          <a href="mail-lists.html" title="Mailing Lists">Mailing Lists</a>
-            </li>
-                      <li class="none">
-                          <a href="plugin-management.html" title="Plugin Management">Plugin Management</a>
-            </li>
-                      <li class="none">
-                          <a href="license.html" title="Project License">Project License</a>
-            </li>
-                      <li class="none">
-                          <a href="modules.html" title="Project Modules">Project Modules</a>
-            </li>
-                      <li class="none">
-            <strong>Project Plugins</strong>
-          </li>
-                      <li class="none">
-                          <a href="project-summary.html" title="Project Summary">Project Summary</a>
-            </li>
-                      <li class="none">
-                          <a href="team-list.html" title="Project Team">Project Team</a>
-            </li>
-                      <li class="none">
-                          <a href="source-repository.html" title="Source Repository">Source Repository</a>
-            </li>
-              </ul>
-        </li>
+                  </li>
                                                                                                                                             <li class="collapsed">
                           <a href="project-reports.html" title="Project Reports">Project Reports</a>
                   </li>
@@ -148,7 +102,39 @@
     </div>
     <div id="bodyColumn">
       <div id="contentBox">
-        <div class="section"><h2>Project Build Plugins<a name="Project_Build_Plugins"></a></h2><a name="Project_Build_Plugins"></a><table border="0" class="bodyTable"><tr class="a"><th>GroupId</th><th>ArtifactId</th><th>Version</th></tr><tr class="b"><td>org.apache.maven.plugins</td><td><a class="externalLink" href="http://maven.apache.org/plugins/maven-clean-plugin/">maven-clean-plugin</a></td><td>2.4.1</td></tr><tr class="a"><td>org.apache.maven.plugins</td><td><a class="externalLink" href="http://maven.apache.org/plugins/maven-compiler-plugin/">maven-compiler-plugin</a></td><td>2.3.2</td></tr><tr class="b"><td>org.apache.maven.plugins</td><td><a class="externalLink" href="http://maven.apache.org/plugins/maven-deploy-plugin/">maven-deploy-plugin</a></td><td>2.5</td></tr><tr class="a"><td>org.apache.maven.plugins</td><td><a class="externalLink" href="http://maven.apache.org/plugins/maven-install-plugin/">maven-install-plugin</a></td><td>2.3.1</td></tr><tr class="b"><td>org.apache.maven.plugins</td><td><a class="externalLink" href="http://maven.apache.org/plugins/maven-site-plugin-3.0-beta-3">maven-site-plugin</a></td><td>3.0-beta-3</td></tr></table></div><div class="section"><h2>Project Report Plugins<a name="Project_Report_Plugins"></a></h2><a name="Project_Report_Plugins"></a><p>There are no plugins reports defined in the Reporting part of this project.</p></div>
+        
+    
+        <div class="section"><h2>HotRod Example<a name="HotRod_Example"></a></h2>
+            <div>
+                <p>
+                    Infinispan offers remote access to cache content via a number of mechanisms including WebSockets,
+                    a
+                    REST server, and a custom binary protocal called
+                    <a class="externalLink" href="http://community.jboss.org/wiki/JavaHotRodClient">HotRod</a>
+                    . The HotRod example provided with RioSpan shows how Rio can be used to deploy Infinispan and start
+                    an Infinispan HotRod server. As with all RioSpan examples, Infinispan is started using a provided
+                    configuration file. In this example the default cache is started in distributed mode. This means the
+                    cache is partitioned across all cluster members using a consistent hashing algorithm.
+                </p>
+            <div class="section">
+                <div class="section"><h3>
+                    <a name="running-the-example">Running the Example</a>
+                <a name="Running_the_Example"></a></h3>
+            </div>
+                <p>
+                    This example provides a Jini smart proxy that implements a factory method for creating a
+                    HotRod smart
+                    proxy. Unlike in a non-RioSpan Infinispan installation, this allows the user to create a HotRod
+                    client without knowing the IP address/hostname and port of a cluster member. Rather, Jini's service
+                    discovery mechanism is used to discover a RioSpan HotRodProxy containing a
+                    createHotRodCacheContainer() method. Once a service proxy is obtained, calling this method creates a
+                    HotRod client aware of the cluster topology and able to react if it changes.
+                </p>
+            </div>
+        </div></div>
+    
+
+
       </div>
     </div>
     <div class="clear">
