@@ -146,7 +146,7 @@
             </div>
 
             <h3>
-                <a name="Deploy_RioSpan">Deploy RioSpan</a>
+                <a name="Deploy_RioSpan">Deploy RioSpan HotRod Server</a>
             </h3>
             <div>
                 <p>
@@ -181,7 +181,7 @@
             </div>
 
             <h3>
-                <a name="Run_RioSpan_Client">Run RioSpan Client</a>
+                <a name="Run_RioSpan_Client">Run RioSpan HotRod Client</a>
             </h3>
             <div>
                 <p>
@@ -201,23 +201,19 @@
                 </p>
                 <p>First run output (among the Maven output):</p>
                 <div class="source">
-                    <pre>
-                        Jun 22, 2011 11:52:08 PM org.infinispan.client.hotrod.impl.operations.HotRodOperation readNewTopologyAndHash
-                        INFO: ISPN04006: New topology: {GLaDOS.local/192.168.123.4:11222=8073}
-                        Jun 22, 2011 11:52:08 PM org.infinispan.client.hotrod.impl.transport.tcp.TcpTransportFactory updateServers
-                        INFO: ISPN04014: New server added(GLaDOS.local/192.168.123.4:11222), adding to the pool.
-                        world
-                    </pre>
+                    <pre><![CDATA[Jun 22, 2011 11:52:08 PM org.infinispan.client.hotrod.impl.operations.HotRodOperation readNewTopologyAndHash
+INFO: ISPN04006: New topology: {GLaDOS.local/192.168.123.4:11222=8073}
+Jun 22, 2011 11:52:08 PM org.infinispan.client.hotrod.impl.transport.tcp.TcpTransportFactory updateServers
+INFO: ISPN04014: New server added(GLaDOS.local/192.168.123.4:11222), adding to the pool.
+world]]></pre>
                 </div>
                 <p>Second run output:</p>
                 <div class="source">
-                    <pre>
-                        Jun 22, 2011 11:53:48 PM org.infinispan.client.hotrod.impl.operations.HotRodOperation readNewTopologyAndHash
-                        INFO: ISPN04006: New topology: {GLaDOS.local/192.168.123.4:11222=8073}
-                        Jun 22, 2011 11:53:48 PM org.infinispan.client.hotrod.impl.transport.tcp.TcpTransportFactory updateServers
-                        INFO: ISPN04014: New server added(GLaDOS.local/192.168.123.4:11222), adding to the pool.
-                        Found existing value: world
-                    </pre>
+                    <pre><![CDATA[Jun 22, 2011 11:53:48 PM org.infinispan.client.hotrod.impl.operations.HotRodOperation readNewTopologyAndHash
+INFO: ISPN04006: New topology: {GLaDOS.local/192.168.123.4:11222=8073}
+Jun 22, 2011 11:53:48 PM org.infinispan.client.hotrod.impl.transport.tcp.TcpTransportFactory updateServers
+INFO: ISPN04014: New server added(GLaDOS.local/192.168.123.4:11222), adding to the pool.
+Found existing value: world]]></pre>
                 </div>
             </div>
         </section>

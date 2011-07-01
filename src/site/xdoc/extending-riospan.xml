@@ -3,20 +3,34 @@
     xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
 
     <properties>
-        <title>Getting Started</title>
+        <title>Extending RioSpan</title>
     </properties>
 
     <body>
-        <section name="Examples">
+        <section name="Extending RioSpan">
             <div>
                 <p>
                     To get an idea of how to deploy RioSpan-based services with Rio, please check out the
                     <a href="./examples.html">Examples</a>
                     first.
                 </p>
+                <p>
+                    Infinispan is typically configured via an XML configuration file that describes a cluster and the
+                    caches it hosts. The RioSpan examples load their respective Infinispan configurations from a file
+                    called
+                    <code>infinispan-config.xml</code>
+                    in the classpath of their service modules. Experienced Maven users would know to look for
+                    classpath
+                    resources in the
+                    <code>src/main/resources</code>
+                    directory within the example modules with a
+                    <code>-service</code>
+                    suffix.
+                </p>
             </div>
         </section>
 
+        <!-- 
         <section name="A Quick Intro to Rio">
             <div>
                 <p></p>
@@ -44,6 +58,7 @@
                 </h3>
             </div>
         </section>
+         -->
 
         <section name="Extending RioSpan">
             <div>

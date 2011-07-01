@@ -42,5 +42,91 @@
             </answer>
         </faq>
     </part>
+    <part id="jini">
+        <title>Jini</title>
 
+        <faq id="jini">
+            <question>What is Jini?</question>
+            <answer>
+                <p>
+                    Jini is a powerful distributed service technology developed and open-sourced by Sun Microsystems.
+                    Sun
+                    donated the intellectual property comprising the specifications and an implementation
+                    to the
+                    <a href="http://apache.org">Apache Software Foundation</a>
+                    where they became
+                    <a href="http://river.apache.org">
+                        Apache River
+                    </a>
+                    and are seeing active development. A historical site resides at
+                    <a href="http://jini.org">Jini.org</a>
+                    but it is not being actively maintained.
+                </p>
+            </answer>
+        </faq>
+        <faq id="proxy">
+            <question>
+                What is a
+                <i>proxy</i>
+                ?
+            </question>
+            <answer>
+                <p>
+                    A
+                    <i>proxy</i>
+                    is an implementation of an interface containing at least one method that, when called, performs a
+                    remote method invocation on a service implementation in another vm.
+                </p>
+            </answer>
+        </faq>
+        <faq id="smart-proxy">
+            <question>
+                What is a
+                <i>smart-proxy</i>
+                ?
+            </question>
+            <answer>
+                <p>
+                    A
+                    <i>smart proxy</i>
+                    is an implementation of an interface where at least one method contains logic that runs locally on
+                    the
+                    client vm. A smart proxy method may in its implementation call a remote method but must contain
+                    additional logic that runs on the client to be considered a smart proxy.
+                </p>
+            </answer>
+        </faq>
+    </part>
+    <part id="rio">
+        <title>Rio</title>
+
+        <faq id="opstring">
+            <question>
+                What is an
+                <i>opstring</i>
+                ?
+            </question>
+            <answer>
+                <p>
+                    An <i>opstring</i> (Operational String) is a configuration file used by Rio to describe the deployment profile for one or more
+                    services. It can declare associations between services and provisioning
+                    restrictions, among other features. Opstrings can be written in Groovy or XML. For more information see the
+                    <a href="http://www.rio-project.org/opstring/opstring.html">Rio Documentation</a>
+                    .
+                </p>
+            </answer>
+        </faq>
+        <faq id="cybernode">
+            <question>
+                What is a
+                <i>cybernode</i>
+                ?
+            </question>
+            <answer>
+                <p>A <i>cybernode</i>
+    is the Java service container provided by Rio. Services built with RioSpan are deployed to one or more cybernodes
+    based on a provided opstring.</p>
+            </answer>
+        </faq>
+    </part>
 </faqs>
