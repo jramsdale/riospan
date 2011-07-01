@@ -323,7 +323,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <infinispan.version>5.0.0.CR5</infinispan.version>
+        <infinispan.version>5.0.0.CR6</infinispan.version>
         <rio.version>4.3-SNAPSHOT</rio.version>
         <rio.maven.plugin.version>4.1</rio.maven.plugin.version>
         <slf4j.version>1.6.1</slf4j.version>
