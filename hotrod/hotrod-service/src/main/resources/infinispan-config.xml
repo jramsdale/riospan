@@ -3,7 +3,7 @@
     xmlns="urn:infinispan:config:4.0">
     
     <global>
-        <globalJmxStatistics enabled="true" />
+        <globalJmxStatistics enabled="true" allowDuplicateDomains="true" />
         <transport></transport>
     </global>
 

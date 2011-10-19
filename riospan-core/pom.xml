@@ -6,11 +6,14 @@
         <artifactId>riospan</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-    <groupId>org.rioproject.substrates.riospan</groupId>
     <artifactId>riospan-core</artifactId>
     <name>RioSpan Core</name>
 
     <dependencies>
+        <dependency>
+            <groupId>org.rioproject</groupId>
+            <artifactId>rio-lib</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-core</artifactId>

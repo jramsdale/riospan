@@ -8,7 +8,6 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.rioproject.substrates.riospan</groupId>
     <artifactId>hotrod-proxy</artifactId>
     <name>RioSpan HotRod Proxy</name>
 
@@ -16,7 +15,6 @@
         <dependency>
             <groupId>org.rioproject.substrates.riospan</groupId>
             <artifactId>riospan-core</artifactId>
-            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.rioproject.substrates.riospan</groupId>

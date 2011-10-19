@@ -11,12 +11,10 @@ class RioSpanConfig {
 	Entry[] getServiceUIs(String codebase) {
 		def entry = []
 		if(codebase!=null) {
-			Resolver r = ResolverHelper.getInstance()
+			Resolver r = ResolverHelper.getResolver()
 			String uiClass = 'org.rioproject.substrates.riospan.ui.RioSpanIntro'
 			def classpath = []
-			for(String s : r.getClassPathFor("org.rioproject.substrates.riospan:hotrod-ui:1.0.0-SNAPSHOT",
-											 (File)null,
-											 true)) {
+			for(String s : r.getClassPathFor("org.rioproject.substrates.riospan:hotrod-ui:1.0.0-SNAPSHOT")) {
 				if(s.startsWith(ResolverHelper.M2_HOME))
 					s = s.substring(ResolverHelper.M2_HOME.length()+1)
 				classpath << s

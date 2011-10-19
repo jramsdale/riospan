@@ -8,7 +8,6 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     
-    <groupId>org.rioproject.substrates.riospan</groupId>
     <artifactId>hotrod</artifactId>
     <packaging>pom</packaging>
     <name>RioSpan HotRod</name>
@@ -71,11 +70,4 @@
         </repository>
     </repositories>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.rioproject</groupId>
-            <artifactId>rio</artifactId>
-        </dependency>
-    </dependencies>
-    
 </project>
